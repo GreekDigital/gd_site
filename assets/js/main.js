@@ -368,38 +368,6 @@ var $ = jQuery.noConflict();
   },
 
 //
-// bg youtube
-// ---------------------------------------------------------
-
-  fn_bgYoutube: function() {
-    var $el = $('.bg-youtube');
-
-    if ($el.length) {
-      $el.each(function() {
-        var $bgYoutube = $(this);
-        var $bgYoutubeFallback = $bgYoutube.find('.bg-youtube-fallback');
-        var $bgYoutubePlaceholder = $bgYoutube.find('.bg-youtube-placeholder');
-        var $bgYoutubePlayer = $bgYoutube.find('.bg-youtube-player');
-
-        if (isMobile) {
-          $bgYoutubePlaceholder.add($bgYoutubePlayer).remove();
-        } else {
-          $bgYoutubePlayer.YTPlayer();
-          $bgYoutubeFallback.remove();
-
-          $bgYoutubePlayer.on('YTPPlay', function() {
-            $(this).addClass('js-bg-youtube-is-playing').removeClass('js-bg-youtube-is-paused');
-          });
-          $bgYoutubePlayer.on('YTPPause', function() {
-            $(this).addClass('js-bg-youtube-is-paused').removeClass('js-bg-youtube-is-playing');
-          });
-        }
-      });
-    }
-  },
-
-
-//
 // utility
 // ---------------------------------------------------------
 
