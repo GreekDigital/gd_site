@@ -1,3 +1,4 @@
+<?php include_once("analyticstracking.php") ?>
 <?php
   require 'PHPMailer/PHPMailerAutoload.php';
 
